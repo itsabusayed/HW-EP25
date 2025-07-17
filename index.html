@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">Abu Sayed</a>
@@ -30,7 +29,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -50,13 +48,12 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="image-placeholder"></div>
+                <img src="./AS AHMED KAWSAR-2.png" alt="A photo of Abu Sayed" id="mypic">
             </div>
         </div>
         <div class="hero-shape"></div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
@@ -86,6 +83,16 @@
             <p>&copy; 2025 Abu Sayed. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
