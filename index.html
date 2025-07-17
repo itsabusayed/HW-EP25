@@ -12,6 +12,18 @@
 </head>
 
 <body>
+    <!-- Modal/Popup Structure -->
+    <div class="modal-overlay" id="welcomeModal">
+        <div class="modal-container">
+            <div class="modal-content">
+                <h3>নোটিশ</h3>
+                <p>এই পোর্টফোলিও ওয়েবসাইটটি পরীক্ষামূলকভাবে তৈরি করা হয়েছে।</p>
+                <button class="modal-close-btn" id="closeModal">
+                    <i class="fas fa-times"></i> বন্ধ করুন
+                </button>
+            </div>
+        </div>
+    </div>
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">Abu Sayed</a>
@@ -37,7 +49,8 @@
                     <span class="name">Abu Sayed</span>
                 </h1>
                 <p class="hero-subtitle">Web Developer & Cyber Security Service Provider</p>
-                <p class="hero-description">I create beautiful, build modern, secure, and fast websites with a focus on performance and protection.</p>
+                <p class="hero-description">I create beautiful, build modern, secure, and fast websites with a focus on
+                    performance and protection.</p>
                 <div class="hero-buttons">
                     <a href="https://github.com/itsabusayed" target="_blank" class="btn btn-primary">
                         <i class="fas fa-eye"></i> See My Work
@@ -85,12 +98,28 @@
     </footer>
 
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
+        // Welcome Modal Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const welcomeModal = document.getElementById('welcomeModal');
+            const closeModalBtn = document.getElementById('closeModal');
+
+            // Show modal after page loads
+            setTimeout(() => {
+                welcomeModal.classList.add('active');
+            }, 1000);
+
+            // Close modal when button is clicked
+            closeModalBtn.addEventListener('click', function () {
+                welcomeModal.classList.remove('active');
+            });
+
+            // Close modal when clicking outside the modal content
+            welcomeModal.addEventListener('click', function (e) {
+                if (e.target === welcomeModal) {
+                    welcomeModal.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
